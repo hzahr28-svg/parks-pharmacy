@@ -79,7 +79,7 @@ export default function Home() {
         <div style={{ maxWidth: 1180, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))", gap: 44, alignItems: "center", position: "relative" }}>
           <div>
             <div style={{ display: "inline-block", background: "white", color: "#0f8f8f", border: "1px solid #bfe7e6", padding: "9px 15px", borderRadius: 999, fontWeight: 900, marginBottom: 22 }}>Healthier care. Lower stress.</div>
-            <h1 style={{ fontSize: "clamp(42px,7vw,76px)", lineHeight: .98, letterSpacing: "-2.5px", margin: 0, color: "#12343b", fontWeight: 950 }}>Local pharmacy care, made easier.</h1>
+            <h1 style={{ fontSize: "clamp(42px,7vw,76px)", lineHeight: .98, letterSpacing: "-2.5px", margin: 0, color: "#12343b", fontWeight: 950 }}>Local pharmacy care made easier.</h1>
             <p style={{ marginTop: 22, color: "#4f6f76", fontSize: 20, lineHeight: 1.65, maxWidth: 640 }}>Parks Pharmacy helps patients manage refills, delivery, packaging, vaccines, and insurance issues with a team that actually knows your name.</p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 30 }}>
               <a href="#transfer" style={primaryButton}>Become a Patient</a>
