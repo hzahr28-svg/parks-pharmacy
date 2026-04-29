@@ -13,6 +13,19 @@ const services = [
   ["Insurance Help", "Prior authorization support, plan issue help, and covered-alternative coordination."],
 ];
 
+const trustItems = [
+  ["100+ Years", "Serving the Albion community"],
+  ["Local Team", "Real people who know your name"],
+  ["Fast Support", "Refills, transfers, packaging, and delivery"],
+];
+
+const switchReasons = [
+  "Talk directly with a local pharmacy team",
+  "We help with prior authorizations",
+  "Medication packaging to simplify routines",
+  "Delivery options for eligible patients",
+];
+
 const inputStyle: React.CSSProperties = {
   width: "100%",
   padding: "15px 16px",
@@ -95,6 +108,12 @@ export default function Home() {
             <a href="#contact" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
               Contact
             </a>
+            <a href="https://www.instagram.com/parksdrugs/" target="_blank" rel="noopener noreferrer" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
+              Instagram
+            </a>
+            <a href="https://www.facebook.com/ParksPharmacyAlbion/" target="_blank" rel="noopener noreferrer" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
+              Facebook
+            </a>
             <a href="tel:15176299481" style={primaryButton}>
               Call
             </a>
@@ -156,16 +175,21 @@ export default function Home() {
 
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 32 }}>
               <a href="#transfer" style={primaryButton}>
-                Become a Patient
+                Transfer Your Prescriptions in 60 Seconds
               </a>
               <a href="#refill" style={secondaryButton}>
-                Refill On-The-Go
+                Request a Refill Now
               </a>
             </div>
 
             <p style={{ marginTop: 28, color: "#334155", fontWeight: 800 }}>
               318 S Superior St, Albion, MI • 517-629-9481
             </p>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 18 }}>
+              <a href="https://www.instagram.com/parksdrugs/" target="_blank" rel="noopener noreferrer" style={{ color: "#0ea5e9", fontWeight: 800, textDecoration: "none" }}>Instagram</a>
+              <span style={{ color: "#94a3b8" }}>•</span>
+              <a href="https://www.facebook.com/ParksPharmacyAlbion/" target="_blank" rel="noopener noreferrer" style={{ color: "#0ea5e9", fontWeight: 800, textDecoration: "none" }}>Facebook</a>
+            </div>
           </div>
 
           <div
@@ -209,6 +233,75 @@ export default function Home() {
                   padding: 16,
                   fontWeight: 800,
                   marginBottom: 12,
+                }}
+              >
+                ✓ {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "28px 22px 70px" }}>
+        <div
+          style={{
+            maxWidth: 1180,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+            gap: 16,
+          }}
+        >
+          {trustItems.map(([big, small]) => (
+            <div
+              key={big}
+              style={{
+                background: "white",
+                border: "1px solid #e2e8f0",
+                borderRadius: 24,
+                padding: 24,
+                boxShadow: "0 10px 30px rgba(0,0,0,0.04)",
+              }}
+            >
+              <div style={{ fontSize: 28, fontWeight: 950, color: "#0f172a" }}>{big}</div>
+              <div style={{ color: "#64748b", marginTop: 6 }}>{small}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ background: "white", padding: "78px 22px" }}>
+        <div
+          style={{
+            maxWidth: 1180,
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: 34,
+            alignItems: "center",
+          }}
+        >
+          <div>
+            <div style={{ color: "#0ea5e9", fontWeight: 950, letterSpacing: 2 }}>
+              WHY SWITCH TO PARKS
+            </div>
+            <h2 style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: "12px 0", lineHeight: 1.08 }}>
+              A pharmacy experience built around follow-through.
+            </h2>
+            <p style={{ color: "#64748b", fontSize: 18, lineHeight: 1.7 }}>
+              We combine the convenience patients expect with the personal accountability only a local pharmacy can provide.
+            </p>
+          </div>
+          <div style={{ display: "grid", gap: 12 }}>
+            {switchReasons.map((item) => (
+              <div
+                key={item}
+                style={{
+                  background: "#f8fafc",
+                  border: "1px solid #e2e8f0",
+                  borderRadius: 20,
+                  padding: 18,
+                  fontWeight: 850,
                 }}
               >
                 ✓ {item}
@@ -394,21 +487,44 @@ export default function Home() {
       </section>
 
       <section id="contact" style={{ padding: "80px 22px", background: "white" }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
-          <h2 style={{ fontSize: 42 }}>Hours & Contact</h2>
-          <p><strong>Monday – Friday:</strong> 9:00 AM – 6:00 PM</p>
-          <p><strong>Saturday:</strong> 9:00 AM – 1:00 PM</p>
-          <p><strong>Sunday:</strong> Closed</p>
-          <p><strong>Phone:</strong> 517-629-9481</p>
-          <p><strong>Fax:</strong> 517-629-8904</p>
-          <p><strong>Email:</strong> parksdrugs@outlook.com</p>
-          <p><strong>Address:</strong> 318 S Superior St, Albion, MI 49224</p>
+        <div style={{ maxWidth: 1180, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 34 }}>
+          <div>
+            <div style={{ color: "#0ea5e9", fontWeight: 950, letterSpacing: 2 }}>
+              VISIT US
+            </div>
+            <h2 style={{ fontSize: 42, margin: "12px 0" }}>Hours & Contact</h2>
+            <p style={{ color: "#64748b", fontSize: 18, lineHeight: 1.7 }}>
+              Call before visiting for holiday hours, vaccine availability, or special medication requests.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 18 }}>
+              <a href="https://www.instagram.com/parksdrugs/" target="_blank" rel="noopener noreferrer" style={secondaryButton}>
+                Follow on Instagram
+              </a>
+              <a href="https://www.facebook.com/ParksPharmacyAlbion/" target="_blank" rel="noopener noreferrer" style={secondaryButton}>
+                Follow on Facebook
+              </a>
+            </div>
+          </div>
+          <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 30, padding: 30 }}>
+            <p><strong>Monday – Friday:</strong> 9:00 AM – 6:00 PM</p>
+            <p><strong>Saturday:</strong> 9:00 AM – 1:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+            <hr style={{ border: 0, borderTop: "1px solid #e2e8f0", margin: "22px 0" }} />
+            <p><strong>Phone:</strong> 517-629-9481</p>
+            <p><strong>Fax:</strong> 517-629-8904</p>
+            <p><strong>Email:</strong> parksdrugs@outlook.com</p>
+            <p><strong>Address:</strong> 318 S Superior St, Albion, MI 49224</p>
+            <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 18 }}>
+              Local SEO: Albion pharmacy, pharmacy in Albion MI, prescription delivery Albion MI, medication packaging Albion Michigan.
+            </p>
+          </div>
         </div>
       </section>
 
       <footer style={{ background: "#020617", color: "#cbd5e1", padding: 30 }}>
-        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
-          © {new Date().getFullYear()} Parks Pharmacy. Independent community pharmacy serving Albion, Michigan.
+        <div style={{ maxWidth: 1180, margin: "0 auto", display: "flex", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
+          <span>© {new Date().getFullYear()} Parks Pharmacy</span>
+          <span>Independent community pharmacy serving Albion, Michigan.</span>
         </div>
       </footer>
     </main>
