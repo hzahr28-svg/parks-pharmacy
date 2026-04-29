@@ -121,11 +121,13 @@ export default function Home() {
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <h2 style={{ fontSize: 40, marginBottom: 8 }}>Transfer Your Prescription</h2>
           <p style={{ color: "#4b5563", lineHeight: 1.7 }}>Submit basic information below and our team will contact you. Please do not include sensitive medical details in this form.</p>
-          <form action="mailto:parksdrugs@outlook.com" method="post" encType="text/plain" style={{ marginTop: 22 }}>
-            <input name="Name" style={inputStyle} placeholder="Full Name" />
-            <input name="Phone" style={inputStyle} placeholder="Phone Number" />
-            <input name="Current Pharmacy" style={inputStyle} placeholder="Current Pharmacy" />
-            <textarea name="Note" style={{ ...inputStyle, minHeight: 110 }} placeholder="Optional note — do not include sensitive health information" />
+          <form action="https://formspree.io/f/maqargoa" method="POST" style={{ marginTop: 22 }}>
+            <input type="hidden" name="Form Type" value="Transfer Prescription Request" />
+            <input name="Name" style={inputStyle} placeholder="Full Name" required />
+            <input name="Phone" style={inputStyle} placeholder="Phone Number" required />
+            <input name="Current Pharmacy" style={inputStyle} placeholder="Current Pharmacy Name" />
+            <textarea name="Message" style={{ ...inputStyle, minHeight: 110 }} placeholder="Optional note — please do not include medication names, diagnosis, DOB, Rx numbers, or other sensitive health information." />
+            <p style={{ color: "#6b7280", fontSize: 13, lineHeight: 1.5 }}>Please do not submit protected health information through this form. Our team will contact you directly to complete the transfer securely.</p>
             <button type="submit" style={buttonStyle}>Submit Transfer Request</button>
           </form>
         </div>
@@ -135,12 +137,14 @@ export default function Home() {
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <h2 style={{ fontSize: 40, marginBottom: 8 }}>Request a Refill</h2>
           <p style={{ color: "#4b5563", lineHeight: 1.7 }}>For urgent refills or clinical questions, please call the pharmacy directly.</p>
-          <form action="mailto:parksdrugs@outlook.com" method="post" encType="text/plain" style={{ marginTop: 22 }}>
-            <input name="Name" style={inputStyle} placeholder="Full Name" />
-            <input name="Phone" style={inputStyle} placeholder="Phone Number" />
-            <input name="Medication" style={inputStyle} placeholder="Prescription Number or Medication Name" />
+          <form action="https://formspree.io/f/maqargoa" method="POST" style={{ marginTop: 22 }}>
+            <input type="hidden" name="Form Type" value="Refill Callback Request" />
+            <input name="Name" style={inputStyle} placeholder="Full Name" required />
+            <input name="Phone" style={inputStyle} placeholder="Phone Number" required />
             <input name="Preference" style={inputStyle} placeholder="Pickup or Delivery?" />
-            <button type="submit" style={buttonStyle}>Submit Refill Request</button>
+            <textarea name="Message" style={{ ...inputStyle, minHeight: 110 }} placeholder="Optional note — please do not include medication names, diagnosis, DOB, Rx numbers, or other sensitive health information." />
+            <p style={{ color: "#6b7280", fontSize: 13, lineHeight: 1.5 }}>Please do not submit protected health information through this form. For urgent refills or clinical questions, call the pharmacy directly.</p>
+            <button type="submit" style={buttonStyle}>Request Refill Callback</button>
           </form>
         </div>
       </section>
@@ -180,4 +184,6 @@ export default function Home() {
       </footer>
     </main>
   );
+}
+
 }
