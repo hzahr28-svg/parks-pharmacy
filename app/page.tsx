@@ -61,6 +61,13 @@ const secondaryButton: React.CSSProperties = {
   border: "1px solid #dbe4ec",
 };
 
+const navLink: React.CSSProperties = {
+  color: "#334155",
+  textDecoration: "none",
+  fontWeight: 800,
+  fontSize: 14,
+};
+
 export default function Home() {
   return (
     <main
@@ -72,49 +79,86 @@ export default function Home() {
     >
       <header
         style={{
-          background: "rgba(255,255,255,.9)",
+          background: "rgba(255,255,255,.88)",
           borderBottom: "1px solid #e2e8f0",
           position: "sticky",
           top: 0,
           zIndex: 20,
-          backdropFilter: "blur(12px)",
+          backdropFilter: "blur(14px)",
         }}
       >
         <div
           style={{
             maxWidth: 1180,
             margin: "0 auto",
-            padding: "16px 22px",
+            padding: "14px 22px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             gap: 16,
           }}
         >
-          <div>
-            <div style={{ fontSize: 26, fontWeight: 900 }}>Parks Pharmacy</div>
-            <div style={{ color: "#0ea5e9", fontWeight: 800, fontSize: 13 }}>
-              Albion, Michigan
+          <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <div
+                style={{
+                  width: 46,
+                  height: 46,
+                  borderRadius: 16,
+                  background: "linear-gradient(135deg,#0ea5e9,#14b8a6)",
+                  color: "white",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 23,
+                  fontWeight: 950,
+                  boxShadow: "0 12px 24px rgba(14,165,233,.22)",
+                }}
+              >
+                P
+              </div>
+              <div>
+                <div style={{ fontSize: 24, fontWeight: 950, letterSpacing: "-.8px" }}>
+                  Parks Pharmacy
+                </div>
+                <div style={{ color: "#0ea5e9", fontWeight: 850, fontSize: 13 }}>
+                  Albion, Michigan
+                </div>
+              </div>
             </div>
-          </div>
+          </a>
 
-          <nav style={{ display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-            <a href="#services" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
-              Services
+          <nav
+            style={{
+              display: "flex",
+              gap: 16,
+              alignItems: "center",
+              flexWrap: "wrap",
+              justifyContent: "flex-end",
+            }}
+          >
+            <a href="#services" style={navLink}>Services</a>
+            <a href="/providers" style={navLink}>Providers</a>
+            <a href="#contact" style={navLink}>Contact</a>
+            <a
+              href="#transfer"
+              style={{
+                ...secondaryButton,
+                padding: "11px 17px",
+                fontSize: 14,
+                boxShadow: "0 8px 20px rgba(15,23,42,.04)",
+              }}
+            >
+              Transfer RX
             </a>
-            <a href="#providers" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
-              Providers
-            </a>
-            <a href="#contact" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
-              Contact
-            </a>
-            <a href="https://www.instagram.com/parksdrugs/" target="_blank" rel="noopener noreferrer" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
-              Instagram
-            </a>
-            <a href="https://www.facebook.com/ParksPharmacyAlbion/" target="_blank" rel="noopener noreferrer" style={{ color: "#334155", textDecoration: "none", fontWeight: 700 }}>
-              Facebook
-            </a>
-            <a href="tel:15176299481" style={primaryButton}>
+            <a
+              href="tel:15176299481"
+              style={{
+                ...primaryButton,
+                padding: "11px 17px",
+                fontSize: 14,
+              }}
+            >
               Call
             </a>
           </nav>
@@ -185,11 +229,6 @@ export default function Home() {
             <p style={{ marginTop: 28, color: "#334155", fontWeight: 800 }}>
               318 S Superior St, Albion, MI • 517-629-9481
             </p>
-            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 18 }}>
-              <a href="https://www.instagram.com/parksdrugs/" target="_blank" rel="noopener noreferrer" style={{ color: "#0ea5e9", fontWeight: 800, textDecoration: "none" }}>Instagram</a>
-              <span style={{ color: "#94a3b8" }}>•</span>
-              <a href="https://www.facebook.com/ParksPharmacyAlbion/" target="_blank" rel="noopener noreferrer" style={{ color: "#0ea5e9", fontWeight: 800, textDecoration: "none" }}>Facebook</a>
-            </div>
           </div>
 
           <div
@@ -321,8 +360,7 @@ export default function Home() {
               Everything you expect from a pharmacy — with better follow-through.
             </h2>
             <p style={{ color: "#64748b", fontSize: 18, lineHeight: 1.7 }}>
-              A cleaner, easier pharmacy experience for patients, families, clinics, and care
-              teams.
+              A cleaner, easier pharmacy experience for patients, families, clinics, and care teams.
             </p>
           </div>
 
@@ -385,8 +423,7 @@ export default function Home() {
             </div>
             <h2 style={{ fontSize: 42, margin: "12px 0" }}>Transfer to Parks Pharmacy.</h2>
             <p style={{ color: "#64748b", fontSize: 18, lineHeight: 1.7 }}>
-              Send us your contact information and our team will call you to complete the
-              transfer securely.
+              Send us your contact information and our team will call you to complete the transfer securely.
             </p>
           </div>
 
@@ -436,8 +473,7 @@ export default function Home() {
             </div>
             <h2 style={{ fontSize: 42, margin: "12px 0" }}>Need a refill?</h2>
             <p style={{ color: "#64748b", fontSize: 18, lineHeight: 1.7 }}>
-              Request a callback and we’ll follow up. For urgent needs, call the pharmacy
-              directly.
+              Request a callback and we’ll follow up. For urgent needs, call the pharmacy directly.
             </p>
           </div>
 
@@ -479,10 +515,14 @@ export default function Home() {
             Medication coordination for care teams.
           </h2>
           <p style={{ color: "#cbd5e1", fontSize: 18, lineHeight: 1.75, maxWidth: 820 }}>
-            We support clinics, long-term care facilities, and provider offices with
-            adherence packaging, delivery coordination, and eligible long-acting injectable
-            support.
+            We support clinics, long-term care facilities, and provider offices with adherence packaging,
+            delivery coordination, and eligible long-acting injectable support.
           </p>
+          <div style={{ marginTop: 28 }}>
+            <a href="/providers" style={primaryButton}>
+              View Provider Partnership Page
+            </a>
+          </div>
         </div>
       </section>
 
