@@ -486,6 +486,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section style={{ padding: "80px 22px", background: "#f8fafc" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", maxWidth: 780, margin: "0 auto 40px" }}>
+            <div style={{ color: "#0ea5e9", fontWeight: 950, letterSpacing: 2 }}>
+              PATIENT TRUST
+            </div>
+            <h2 style={{ fontSize: "clamp(34px, 4vw, 52px)", margin: "12px 0" }}>
+              A pharmacy patients can actually rely on.
+            </h2>
+            <p style={{ color: "#64748b", fontSize: 18, lineHeight: 1.7 }}>
+              Parks Pharmacy is built around personal service, clear communication, and follow-through.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+            {[
+              ["“They actually answer the phone.”", "Fast support from a local team that knows the community."],
+              ["“They help with insurance issues.”", "Prior authorization and plan support without leaving patients on their own."],
+              ["“Way easier than the big chains.”", "Refills, packaging, delivery, and pharmacist access in one place."],
+            ].map(([quote, text]) => (
+              <div key={quote} style={{ background: "white", border: "1px solid #e2e8f0", borderRadius: 26, padding: 28, boxShadow: "0 10px 30px rgba(0,0,0,0.05)" }}>
+                <div style={{ color: "#f59e0b", fontSize: 22, marginBottom: 12 }}>★★★★★</div>
+                <h3 style={{ margin: 0, fontSize: 22 }}>{quote}</h3>
+                <p style={{ color: "#64748b", lineHeight: 1.65 }}>{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="contact" style={{ padding: "80px 22px", background: "white" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 34 }}>
           <div>
@@ -514,6 +544,13 @@ export default function Home() {
             <p><strong>Fax:</strong> 517-629-8904</p>
             <p><strong>Email:</strong> parksdrugs@outlook.com</p>
             <p><strong>Address:</strong> 318 S Superior St, Albion, MI 49224</p>
+            <iframe
+              src="https://www.google.com/maps?q=318+S+Superior+St+Albion+MI+49224&output=embed"
+              width="100%"
+              height="300"
+              style={{ border: 0, borderRadius: 18, marginTop: 18 }}
+              loading="lazy"
+            />
             <p style={{ color: "#64748b", fontSize: 13, lineHeight: 1.5, marginTop: 18 }}>
               Local SEO: Albion pharmacy, pharmacy in Albion MI, prescription delivery Albion MI, medication packaging Albion Michigan.
             </p>
